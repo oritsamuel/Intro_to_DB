@@ -4,6 +4,7 @@ CREATE DATABASE alx_book_store;
 
 USE alx_book_store;
 
+
 CREATE TABLE books (
     id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(255) NOT NULL,
@@ -15,7 +16,7 @@ CREATE TABLE books (
 
 CREATE TABLE authors (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(255) NOT NULL
+    author_name VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE customers (
@@ -39,7 +40,6 @@ CREATE TABLE order_details (
     quantity INT,
     price DECIMAL(10, 2)
 );
-
 
 ALTER TABLE books ADD FOREIGN KEY (author_id) REFERENCES authors(id);
 ALTER TABLE orders ADD FOREIGN KEY (customer_id) REFERENCES customers(id);
